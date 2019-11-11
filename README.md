@@ -31,5 +31,3 @@ Open your web browser and enter the URL:
 ```
 http://localhost:3000/
 ```
-
----
