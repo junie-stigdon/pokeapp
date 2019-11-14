@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const type = require('./types')
 var createError = require('http-errors');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -23,66 +24,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.get('/:type', function (req, res) {
-  switch (req.params.type) {
-      case 'Normal':
-        res.render('index', { title: 'Weak to:', 
-                message: 'Fighting', title2: 'Resistant to:', 
-                message2: 'Ghost'});
-          break;
-      case 'Fire':
-          res.send('Weak to: Water, Ground, Rock');
-          break;
-      case 'Water':
-          res.send('Weak to: Electric, Grass');
-          break;
-      case 'Electric':
-          res.send('Weak to: Ground');
-          break;
-      case 'Grass':
-          res.send('Weak to: Fire, Ice, Poison, Flying, Bug');
-          break;
-      case 'Ice':
-          res.send('Weak to: Fire, Fighting, Rock, Steel');
-          break;
-      case 'Fighting':
-          res.send('Weak to: Flying, Psychic, Fairy');
-          break;
-      case 'Poison':
-          res.send('Weak to: Ground, Psychic');
-          break;
-      case 'Ground':
-          res.send('Weak to: Water, Grass, Ice');
-          break;
-      case 'Flying':
-          res.send('Weak to: Electric, Ice, Rock');
-          break;
-      case 'Psychic':
-          res.send('Weak to: Bug, Ghost, Dark');
-          break;
-      case 'Bug':
-          res.send('Weak to: Fire, Flying, Rock');
-          break;
-      case 'Rock':
-          res.send('Weak to: Water, Grass, Fighting, Ground, Steel');
-          break;
-      case 'Ghost':
-          res.send('Weak to: Ghost, Dark');
-          break;
-      case 'Dragon':
-          res.send('Weak to: Ice, Dragon, Fairy');
-          break;
-      case 'Dark':
-          res.send('Weak to: Fighting, Bug, Fairy');
-          break;
-      case 'Steel':
-          res.send('Weak to: Fire, Fighting, Ground');
-          break;
-      case 'Fairy':
-          res.send('Weak to: Poison, Steel');
-          break;
-      default:
-          res.send('Try typing water');
-  }
+    console.log(type);
+    var req_param = req.params.type.toLowerCase();
+
+    res.render('index', { title: 'Weak to:', 
+            message: type[req_param].weakness, title2: 'Resistant to:', 
+            message2: type[req_param].resistant});
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

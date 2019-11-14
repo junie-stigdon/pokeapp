@@ -3,7 +3,16 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
+#normal {
+  background-color: #dfd5d5;
+  color: #000000;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#fire {
   background-color: #f44336;
   color: #000000;
   padding: 14px 25px;
