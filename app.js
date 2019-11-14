@@ -24,12 +24,13 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.get('/:type', function (req, res) {
+
     console.log(type);
     var req_param = req.params.type.toLowerCase();
 
-    res.render('index', { title: 'Weak to:', 
-            message: type[req_param].weakness, title2: 'Resistant to:', 
-            message2: type[req_param].resistant});
+    res.render('index', {weak: type[req_param].weakness, res: type[req_param].resistant, 
+                        sup: type[req_param].super, notEff: type[req_param].not});
+
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
