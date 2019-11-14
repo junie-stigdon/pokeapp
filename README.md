@@ -31,5 +31,5 @@ You should receive a message saying that your app is listening on port 3000.
 Open your web browser and enter the URL:
 
 ```
-http://localhost:3000/
+http://localhost:3000/normal
 ```
