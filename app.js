@@ -23,10 +23,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.get('/:type', function (req, res) {
+app.get('/:typeURL', function (req, res) {
 
     console.log(type);
-    var req_param = req.params.type.toLowerCase();
+    var req_param = req.params.typeURL.toLowerCase();
 
     res.render('index', {weak: type[req_param].weakness, res: type[req_param].resistant, 
                         sup: type[req_param].super, notEff: type[req_param].not});
