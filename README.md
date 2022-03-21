@@ -2,7 +2,7 @@
 
 This program is for Pokemon players who have trouble remembering type effectiveness (and don't like looking at charts). This program runs on your local host.
 
-**Note:** This is a work in progress. It is functional as of now, but not finished. 
+**Note:** This project was recreated using React and the PokeAPI: [PokeApp React](https://github.com/junie-stigdon/pokeapp-react)
 
 ---
 
